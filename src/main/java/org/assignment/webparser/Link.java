@@ -2,23 +2,7 @@ package org.assignment.webparser;
 
 import java.util.Objects;
 
-public class Link {
-
-    private String label;
-    private String url;
-
-    public Link(String label, String url) {
-        this.label = label;
-        this.url = url;
-    }
-
-    public String getLabel() {
-        return label;
-    }
-
-    public String getUrl() {
-        return url;
-    }
+public record Link(String label, String url) {
 
     @Override
     public boolean equals(Object object) {

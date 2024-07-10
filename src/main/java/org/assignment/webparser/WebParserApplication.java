@@ -67,14 +67,14 @@ public class WebParserApplication {
         HTMLEditorKit.ParserCallback callback = new LinkExtractorCallback(persistenceService);
         LinkService linkService = new LinkService(callback);
         try {
-            linkService.extractAndStoreLinks(link.getUrl());
+            linkService.extractAndStoreLinks(link.url());
         } catch (IOException e) {
-            System.out.println("Not possible to parse " + link.getUrl());
+            System.out.println("Not possible to parse " + link.url());
         }
     }
 
     private static boolean isUrlNotOnSameHost(Link link, String homeUrl) {
-        return link.getUrl() == null || !link.getUrl().toLowerCase().contains(homeUrl);
+        return link.url() == null || !link.url().toLowerCase().contains(homeUrl);
     }
 
     public static void main(String[] args) {
